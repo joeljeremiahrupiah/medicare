@@ -63,5 +63,10 @@ dependencies {
     implementation "com.google.guava:guava:31.1-android"
     //daimaija animation
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
+    //Rounded Image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //Navigation Component
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
 
 }
