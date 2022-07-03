@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MediCare</string>
+    <string name="verified">Verified</string>
+    <string name="john_doe">John Doe</string>
 </resources>
