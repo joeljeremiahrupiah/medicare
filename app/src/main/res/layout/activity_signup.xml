@@ -6,4 +6,253 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.SignupActivity">
 
+    <ImageView
+        android:id="@+id/ivBackgroundLogin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/background_image"
+        android:foreground="@color/foreground"
+        android:foregroundTintMode="src_atop"
+        android:scaleType="centerCrop"
+        android:src="@drawable/doct"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/vHorizontalRule2"
+        android:layout_width="100dp"
+        android:layout_height="7.5dp"
+        android:layout_marginStart="20dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCreateAccount"
+        app:layout_constraintStart_toStartOf="@+id/btnCreateAccount"
+        app:layout_constraintTop_toTopOf="@+id/btnCreateAccount"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <ImageView
+        android:id="@+id/ivArrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imagedescriptionArrowIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/etFirstName"
+        app:layout_constraintEnd_toEndOf="@+id/etFirstName"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="@+id/etFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/etSignupEmail"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30" />
+
+    <ImageView
+        android:id="@+id/ivArrow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imagedescriptionArrowIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/etSignupEmail"
+        app:layout_constraintEnd_toEndOf="@+id/etSignupEmail"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="@+id/etSignupEmail"
+        app:layout_constraintTop_toTopOf="@+id/etSignupEmail"
+        app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30" />
+
+    <ImageView
+        android:id="@+id/ivArrow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imagedescriptionArrowIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/etSigninPassword"
+        app:layout_constraintEnd_toEndOf="@+id/etSigninPassword"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="@+id/etSigninPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etLastName"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30" />
+
+    <TextView
+        android:id="@+id/tvLoginLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:text="@string/tvSignup"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vHorinzotalView1"
+        android:layout_width="100dp"
+        android:layout_height="7.5dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginLabel" />
+
+    <EditText
+        android:id="@+id/etSignupEmail"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_twotone_email_24"
+        android:drawablePadding="70dp"
+        android:hint="@string/SignupEmail"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vHorinzotalView1"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etFirstName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_twotone_account_circle_24"
+        android:drawablePadding="70dp"
+        android:ems="10"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etSignupEmail"
+        app:layout_constraintStart_toStartOf="@+id/etSignupEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etSignupEmail"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_twotone_account_circle_24"
+        android:drawablePadding="70dp"
+        android:ems="10"
+        android:hint="@string/last_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etFirstName"
+        app:layout_constraintStart_toStartOf="@+id/etFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etSigninPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_twotone_password_24"
+        android:drawablePadding="70dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etLastName"
+        app:layout_constraintStart_toStartOf="@+id/etLastName"
+        app:layout_constraintTop_toBottomOf="@+id/etLastName"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <ImageView
+        android:id="@+id/ivArrow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imagedescriptionArrowIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/etLastName"
+        app:layout_constraintEnd_toEndOf="@+id/etLastName"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="@+id/etLastName"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30" />
+
+    <Button
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="@+id/etSigninPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etSigninPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etSigninPassword"
+        app:strokeColor="@color/teal_200"
+        app:strokeWidth="10dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvSignUpBtn"
+        android:layout_width="116dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/signup_now"
+        android:textColor="@color/bleu"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCreateAccount"
+        app:layout_constraintEnd_toEndOf="@+id/btnCreateAccount"
+        app:layout_constraintTop_toTopOf="@+id/btnCreateAccount"
+        app:layout_constraintVertical_bias="0.521"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvOR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/or"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnCreateAccount"
+        app:layout_constraintStart_toStartOf="@+id/btnCreateAccount"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount" />
+
+    <ImageButton
+        android:id="@+id/btnImageFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/imagebutton"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnImageGoogle"
+        app:layout_constraintTop_toBottomOf="@+id/tvOR"
+        app:srcCompat="@drawable/ic_twotone_account_circle_24"
+        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/btnImageGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/imagebutton"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnImageFacebook"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOR"
+        app:srcCompat="@drawable/ic_twotone_email_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
