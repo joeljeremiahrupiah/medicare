@@ -2,4 +2,8 @@
     <string name="app_name">MediCare</string>
     <string name="verified">Verified</string>
     <string name="john_doe">John Doe</string>
+    <string name="general_physician">General Physician</string>
+    <string name="eye_specialist">Eye Specialist</string>
+    <string name="cardiac_surgeons">Cardiac Surgeons</string>
+    <string name="top_doctors">Top Doctors</string>
 </resources>
