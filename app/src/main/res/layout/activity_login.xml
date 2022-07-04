@@ -60,8 +60,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLoginLabel" />
 
-    <EditText
-        android:id="@+id/etSignupEmail"
+    <AutoCompleteTextView
+        android:id="@+id/etSigninEmail"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -90,9 +90,9 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/etSignupEmail"
-        app:layout_constraintStart_toStartOf="@+id/etSignupEmail"
-        app:layout_constraintTop_toBottomOf="@+id/etSignupEmail"
+        app:layout_constraintEnd_toEndOf="@+id/etSigninEmail"
+        app:layout_constraintStart_toStartOf="@+id/etSigninEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etSigninEmail"
         android:importantForAutofill="no" />
 
     <Button
@@ -114,11 +114,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/direction_label"
-        app:layout_constraintBottom_toBottomOf="@+id/etSignupEmail"
-        app:layout_constraintEnd_toEndOf="@+id/etSignupEmail"
+        app:layout_constraintBottom_toBottomOf="@+id/etSigninEmail"
+        app:layout_constraintEnd_toEndOf="@+id/etSigninEmail"
         app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintStart_toStartOf="@+id/etSignupEmail"
-        app:layout_constraintTop_toTopOf="@+id/etSignupEmail"
+        app:layout_constraintStart_toStartOf="@+id/etSigninEmail"
+        app:layout_constraintTop_toTopOf="@+id/etSigninEmail"
         app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30"
         tools:ignore="ImageContrastCheck" />
 
@@ -130,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="@+id/etLoginPassword"
         app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="@+id/etLoginPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etSignupEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etSigninEmail"
         app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30"
         tools:ignore="ImageContrastCheck"
         android:contentDescription="@string/imagedescription" />
