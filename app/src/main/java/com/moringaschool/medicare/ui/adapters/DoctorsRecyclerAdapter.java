@@ -4,22 +4,24 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.moringaschool.medicare.R;
 import com.moringaschool.medicare.models.Doctor;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class DoctorsRecyclerAdapter extends RecyclerView.Adapter<DoctorsRecyclerAdapter.ViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
-    ArrayList<Doctor> doctorsList;
+    List<Doctor> doctorsList;
 
-    public DoctorsRecyclerAdapter(RecyclerViewInterface recyclerViewInterface, Context context, ArrayList<Doctor> doctorsList) {
+    public DoctorsRecyclerAdapter(RecyclerViewInterface recyclerViewInterface, Context context, List<Doctor> doctorsList) {
         this.recyclerViewInterface = recyclerViewInterface;
         this.context = context;
         this.doctorsList = doctorsList;
@@ -34,9 +36,12 @@ public class DoctorsRecyclerAdapter extends RecyclerView.Adapter<DoctorsRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        holder.doctorName.setText(doctorsList.get(position).getName());
-//        holder.practice.setText(doctorsList.get(position).getPractice());
-//        holder.rating.setText(doctorsList.get(position).getRating());
+        holder.doctorName.setText("Dr."+ " "+ doctorsList.get(position).getFirstName()+ " "+ doctorsList.get(position).getLastName());
+        holder.practice.setText(doctorsList.get(position).getSpecialization());
+        holder.rating.setText(doctorsList.get(position).getRating().toString());
+        Glide.with(context)
+                .load(doctorsList.get(position).getImage())
+                .into(holder.profile);
 //        holder.hours.setText(doctorsList.get(position).getHours());
 
     }
@@ -51,13 +56,14 @@ public class DoctorsRecyclerAdapter extends RecyclerView.Adapter<DoctorsRecycler
         TextView practice;
         TextView rating;
         TextView hours;
-
+        ImageView profile;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             doctorName = itemView.findViewById(R.id.drName);
             practice = itemView.findViewById(R.id.practice);
             rating = itemView.findViewById(R.id.rating);
             hours = itemView.findViewById(R.id.hours);
+            profile= itemView.findViewById(R.id.doctorImg);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
