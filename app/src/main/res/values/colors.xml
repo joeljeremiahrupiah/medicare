@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_blue">#2F455C</color>
     <color name="teal_50">#1DCDF5</color>
-
-
+    <color name="bleu">#37ADDF</color>
+    <color name="foreground">#96000002</color>
 </resources>
