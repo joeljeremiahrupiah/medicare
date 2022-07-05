@@ -40,12 +40,13 @@ public class DoctorDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Intent intend = getIntent();
         Doctor doctor = (Doctor) intend.getSerializableExtra("details");
-        drName.setText(String.format("Dr. %s %s", doctor.getFirstName(), doctor.getFirstName()));
+        drName.setText(String.format("Dr. %s %s", doctor.getFirstName(), doctor.getLastName()));
         drRate.setText(doctor.getRating().toString());
         drPrc.setText(doctor.getSpecialization());
         drAbout.setText(doctor.getAbout());
         drExp.setText(String.format("%s years", doctor.getExperience().toString()));
         drHosp.setText(doctor.getHospital());
+//        drProf.setImageResource(doctor.getImage());
         appoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

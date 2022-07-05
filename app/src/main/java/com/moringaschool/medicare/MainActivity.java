@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.moringaschool.medicare.ui.activities.DoctorsActivity;
+import com.moringaschool.medicare.ui.activities.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
     TextView hello;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         hello.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DoctorsActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
