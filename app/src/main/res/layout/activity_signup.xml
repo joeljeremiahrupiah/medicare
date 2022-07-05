@@ -75,15 +75,16 @@
         android:id="@+id/tvLoginLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/lato"
         android:text="@string/tvSignup"
         android:textColor="@color/white"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <View
         android:id="@+id/vHorinzotalView1"
@@ -98,21 +99,22 @@
 
     <AutoCompleteTextView
         android:id="@+id/actvSignupEmail"
-        android:layout_width="315dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/white"
         android:drawableStart="@drawable/ic_twotone_email_24"
         android:drawablePadding="70dp"
+        android:fontFamily="@font/lato"
         android:hint="@string/SignupEmail"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vHorinzotalView1" />
+        app:layout_constraintTop_toBottomOf="@+id/vHorinzotalView1"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <AutoCompleteTextView
         android:id="@+id/etFirstName"
@@ -122,11 +124,13 @@
         android:drawableStart="@drawable/ic_twotone_account_circle_24"
         android:drawablePadding="70dp"
         android:ems="10"
+        android:fontFamily="@font/lato"
         android:hint="@string/first_name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/actvSignupEmail"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/actvSignupEmail"
@@ -140,11 +144,13 @@
         android:drawableStart="@drawable/ic_twotone_account_circle_24"
         android:drawablePadding="70dp"
         android:ems="10"
+        android:fontFamily="@font/lato"
         android:hint="@string/last_name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/etFirstName"
         app:layout_constraintStart_toStartOf="@+id/etFirstName"
         app:layout_constraintTop_toBottomOf="@+id/etFirstName"
@@ -158,11 +164,13 @@
         android:drawableStart="@drawable/ic_twotone_password_24"
         android:drawablePadding="70dp"
         android:ems="10"
+        android:fontFamily="@font/lato"
         android:hint="@string/password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColorHint="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/etLastName"
         app:layout_constraintStart_toStartOf="@+id/etLastName"
         app:layout_constraintTop_toBottomOf="@+id/etLastName"
@@ -187,22 +195,23 @@
         android:layout_height="70dp"
         android:layout_marginTop="44dp"
         android:backgroundTint="@android:color/transparent"
-        app:strokeColor="@color/teal_200"
-        app:strokeWidth="10dp"
         app:layout_constraintEnd_toEndOf="@+id/etSigninPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/etSigninPassword"
         app:layout_constraintTop_toBottomOf="@+id/etSigninPassword"
+        app:strokeColor="@color/teal_200"
+        app:strokeWidth="5dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tvSignUpBtn"
-        android:layout_width="116dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:fontFamily="@font/lato"
         android:text="@string/signup_now"
-        android:textColor="@color/bleu"
-        android:textSize="16sp"
+        android:textColor="#1DCDF5"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btnCreateAccount"
         app:layout_constraintEnd_toEndOf="@+id/btnCreateAccount"
@@ -219,7 +228,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/or"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/btnCreateAccount"
         app:layout_constraintStart_toStartOf="@+id/btnCreateAccount"
         app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount" />
@@ -237,7 +246,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnImageGoogle"
         app:layout_constraintTop_toBottomOf="@+id/tvOR"
-        app:srcCompat="@drawable/ic_twotone_account_circle_24"
+        app:srcCompat="@drawable/ic_baseline_phone_24"
         tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <ImageButton
@@ -253,7 +262,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOR"
-        app:srcCompat="@drawable/ic_twotone_email_24"
+        app:srcCompat="@drawable/googleg_standard_color_18"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ProgressBar
@@ -267,6 +276,52 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato"
+        android:text="Care"
+        android:textColor="#1DCDF5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/lato"
+        android:text="Medi"
+        android:textColor="@color/teal_200"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/ic_med" />
+
+    <ImageView
+        android:id="@+id/bc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/ivBackgroundLogin"
+        app:layout_constraintTop_toTopOf="@+id/ivBackgroundLogin"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "976655885853",
+    "project_id": "medicare-b7b1c",
+    "storage_bucket": "medicare-b7b1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976655885853:android:789ea60d18cc464d0e48f4",
+        "android_client_info": {
+          "package_name": "com.moringaschool.medicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976655885853-6g4d283h25b7gnchkn1d3m2vts7r7mj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbQaPVDo5HKXrA7bAuvpqQog35prsnRT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976655885853-6g4d283h25b7gnchkn1d3m2vts7r7mj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

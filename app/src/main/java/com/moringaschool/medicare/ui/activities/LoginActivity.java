@@ -15,6 +15,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.moringaschool.medicare.MainActivity;
 import com.moringaschool.medicare.R;
 
@@ -55,10 +67,12 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // fetch user details from firebase to verify user autheniticity
-
+                // fetch user details from firebase to verify user authenticity
                 loginEmailPasswordUser(UserEmail.getText().toString().trim(),
                         UserPassword.getText().toString().trim());
+                Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_SHORT).show();
+                Intent intend = new Intent(LoginActivity.this, DoctorsActivity.class);
+                startActivity(intend);
             }
         });
 
@@ -105,9 +119,9 @@ public class LoginActivity extends AppCompatActivity {
                                                     userApi.setUserFirstName(snapshot.getString("userFirstName"));
                                                     userApi.setUserId(snapshot.getString("userId"));
 
-                                                    // Go to Main activity
-                                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                                    Log.i(TAG, "Navigating to Main Activity ...");
+//                                                    // Go to Main activity
+//                                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                                                    Log.i(TAG, "Navigating to Main Activity ...");
                                                 }
                                             }
                                         }

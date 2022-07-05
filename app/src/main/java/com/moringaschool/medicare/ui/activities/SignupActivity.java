@@ -1,12 +1,24 @@
 package com.moringaschool.medicare.ui.activities;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.moringaschool.medicare.R;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,13 +39,15 @@ public class SignupActivity extends AppCompatActivity {
     @BindView(R.id.etSigninPassword)
     EditText password;
     @BindView(R.id.btnCreateAccount)
-    EditText createAccount;
+    Button createAccount;
     @BindView(R.id.btnImageGoogle)
     ImageButton googleSignIn;
     @BindView(R.id.btnImageFacebook)
     ImageButton facebookSignIn;
     @BindView(R.id.progressBar2)
     ProgressBar progressBar;
+    @BindView(R.id.bc)
+    ImageView bck;
 
     // Firebase
     private FirebaseAuth firebaseAuth;
@@ -64,7 +78,7 @@ public class SignupActivity extends AppCompatActivity {
                 // no user yet ....
             }
         };
-        
+
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +94,7 @@ public class SignupActivity extends AppCompatActivity {
                     String userPassword = password.getText().toString().trim();
 
                     createUserEmailAccount(userEmail, userPassword, userFirstName, userLastName);
+                    Toast.makeText(SignupActivity.this, "Signup successful!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(SignupActivity.this,"Empty Fields Not Allowed",Toast.LENGTH_LONG)
                             .show();
@@ -94,7 +109,13 @@ public class SignupActivity extends AppCompatActivity {
 
             }
         });
-
+        bck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ints = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(ints);
+            }
+        });
         facebookSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
