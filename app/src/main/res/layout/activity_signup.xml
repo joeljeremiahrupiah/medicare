@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pbCircle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.SignupActivity">
@@ -28,12 +27,12 @@
         android:id="@+id/vHorizontalRule2"
         android:layout_width="100dp"
         android:layout_height="7.5dp"
-        android:layout_marginStart="20dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/btnCreateAccount"
+        app:layout_constraintEnd_toEndOf="@+id/btnCreateAccount"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="@+id/btnCreateAccount"
-        app:layout_constraintTop_toTopOf="@+id/btnCreateAccount"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintTop_toTopOf="@+id/btnCreateAccount" />
 
     <ImageView
         android:id="@+id/ivArrow2"
@@ -44,8 +43,7 @@
         app:layout_constraintEnd_toEndOf="@+id/etFirstName"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="@+id/etFirstName"
-        app:layout_constraintTop_toBottomOf="@+id/etSigninEmail"
-        app:layout_constraintVertical_bias="0.666"
+        app:layout_constraintTop_toBottomOf="@+id/actvSignupEmail"
         app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30" />
 
     <ImageView
@@ -53,11 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/imagedescriptionArrowIcon"
-        app:layout_constraintBottom_toBottomOf="@+id/etSigninEmail"
-        app:layout_constraintEnd_toEndOf="@+id/etSigninEmail"
+        app:layout_constraintBottom_toBottomOf="@+id/actvSignupEmail"
+        app:layout_constraintEnd_toEndOf="@+id/actvSignupEmail"
         app:layout_constraintHorizontal_bias="0.127"
-        app:layout_constraintStart_toStartOf="@+id/etSigninEmail"
-        app:layout_constraintTop_toTopOf="@+id/etSigninEmail"
+        app:layout_constraintStart_toStartOf="@+id/actvSignupEmail"
+        app:layout_constraintTop_toTopOf="@+id/actvSignupEmail"
         app:srcCompat="@drawable/ic_baseline_arrow_right_alt_30" />
 
     <ImageView
@@ -99,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvLoginLabel" />
 
     <AutoCompleteTextView
-        android:id="@+id/etSigninEmail"
+        android:id="@+id/actvSignupEmail"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -129,9 +127,10 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/etSigninEmail"
-        app:layout_constraintStart_toStartOf="@+id/etSigninEmail"
-        app:layout_constraintTop_toBottomOf="@+id/etSigninEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/actvSignupEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/actvSignupEmail"
+        app:layout_constraintTop_toBottomOf="@+id/actvSignupEmail" />
 
     <AutoCompleteTextView
         android:id="@+id/etLastName"
@@ -188,12 +187,12 @@
         android:layout_height="70dp"
         android:layout_marginTop="44dp"
         android:backgroundTint="@android:color/transparent"
+        app:strokeColor="@color/teal_200"
+        app:strokeWidth="10dp"
         app:layout_constraintEnd_toEndOf="@+id/etSigninPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/etSigninPassword"
         app:layout_constraintTop_toBottomOf="@+id/etSigninPassword"
-        app:strokeColor="@color/teal_200"
-        app:strokeWidth="10dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -207,8 +206,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btnCreateAccount"
         app:layout_constraintEnd_toEndOf="@+id/btnCreateAccount"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toEndOf="@+id/vHorizontalRule2"
         app:layout_constraintTop_toTopOf="@+id/btnCreateAccount"
-        app:layout_constraintVertical_bias="0.521"
+        app:layout_constraintVertical_bias="0.533"
         tools:ignore="TextContrastCheck" />
 
     <TextView
