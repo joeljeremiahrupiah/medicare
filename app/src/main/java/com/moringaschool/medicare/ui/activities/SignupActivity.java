@@ -1,5 +1,4 @@
 package com.moringaschool.medicare.ui.activities;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,11 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.moringaschool.medicare.R;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -22,9 +18,9 @@ import util.UserApi;
 
 public class SignupActivity extends AppCompatActivity {
 
-    @BindView(R.id.etSigninEmail)
+    @BindView(R.id.actvSignupEmail)
     EditText email;
-    @BindView(R.id.etSigninEmail)
+    @BindView(R.id.etFirstName)
     EditText firstName;
     @BindView(R.id.etLastName)
     EditText lastName;
@@ -36,7 +32,7 @@ public class SignupActivity extends AppCompatActivity {
     ImageButton googleSignIn;
     @BindView(R.id.btnImageFacebook)
     ImageButton facebookSignIn;
-    @BindView(R.id.pbCircle)
+    @BindView(R.id.progressBar2)
     ProgressBar progressBar;
 
     // Firebase
@@ -58,7 +54,7 @@ public class SignupActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-         Check for current user before allocating new resources
+        // Check for current user before allocating new resources
         authStateListener = firebaseAuth -> {
             currentUser = firebaseAuth.getCurrentUser();
 
@@ -68,12 +64,7 @@ public class SignupActivity extends AppCompatActivity {
                 // no user yet ....
             }
         };
-
-        String userEmail = email.getText().toString().trim();
-        String userFirstName = firstName.getText().toString().trim();
-        String userLastName = lastName.getText().toString().trim();
-        String userPassword = password.getText().toString().trim();
-
+        
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,8 +81,8 @@ public class SignupActivity extends AppCompatActivity {
 
                     createUserEmailAccount(userEmail, userPassword, userFirstName, userLastName);
                 } else {
-//                    Toast.makeText(CreateAccountActivity.this,"Empty Fields Not Allowed",Toast.LENGTH_LONG)
-//                            .show();
+                    Toast.makeText(SignupActivity.this,"Empty Fields Not Allowed",Toast.LENGTH_LONG)
+                            .show();
                 }
             }
         });
