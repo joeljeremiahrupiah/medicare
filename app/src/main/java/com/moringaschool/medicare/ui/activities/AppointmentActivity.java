@@ -10,10 +10,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.medicare.R;
+import com.moringaschool.medicare.models.Bookings;
+import com.moringaschool.medicare.models.Doctor;
+import com.squareup.picasso.Picasso;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class AppointmentActivity extends AppCompatActivity {
     private CalendarView mCalendarView;
@@ -25,16 +33,41 @@ public class AppointmentActivity extends AppCompatActivity {
     private Button booking;
     String date;
     String time;
+    TextView drHosp;
+    @BindView(R.id.drAPName)
+    TextView drName;
+    @BindView(R.id.drApPrac)
+    TextView doctorPrac;
+    @BindView(R.id.drRatings)
+    TextView doctorRatings;
+    @BindView(R.id.drAp)
+    ImageView drProf;
+    @BindView(R.id.bcc)
+    ImageView bcck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment);
+        ButterKnife.bind(this);
         mCalendarView = findViewById(R.id.calendarView);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                  date = dayOfMonth+"/"+ (month+1) + "/"+year;
                 Log.e("TAG", "onSelectedDayChange: "+ date);
+            }
+        });
+        Intent intends = getIntent();
+        Doctor doctor = (Doctor) intends.getSerializableExtra("data");
+        drName.setText(String.format("Dr. %s %s", doctor.getFirstName(), doctor.getLastName()));
+        doctorRatings.setText(doctor.getRating().toString());
+        doctorPrac.setText(doctor.getSpecialization());
+        Picasso.get().load(doctor.getImage()).into(drProf);
+        bcck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intens = new Intent(AppointmentActivity.this, DoctorDetailActivity.class);
+                startActivity(intens);
             }
         });
         appointmentTime = findViewById(R.id.am10);
@@ -88,11 +121,12 @@ public class AppointmentActivity extends AppCompatActivity {
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AppointmentActivity.this, "Booked Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AppointmentActivity.this, "Booked Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(AppointmentActivity.this, BookingsActivity.class);
                 intent.putExtra("dateBooked",date);
                 intent.putExtra("timeBooked",time);
-                FirebaseDatabase.getInstance().getReference("Appointments").push().child("Date").setValue(date + " "+ time);
+                Bookings bookings = new Bookings(date,time,"Dr." +" "+ doctor.getFirstName()+ " "+ doctor.getLastName(), doctor.getHospital());
+                FirebaseDatabase.getInstance().getReference("Appointments").push().child("Booking").setValue(bookings);
                 startActivity(intent);
             }
         });

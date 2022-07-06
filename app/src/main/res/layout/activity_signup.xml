@@ -268,12 +268,11 @@
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyle"
-        android:layout_width="115dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="68dp"
-        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -293,7 +292,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="70dp"
         android:fontFamily="@font/lato"
         android:text="Medi"
         android:textColor="@color/teal_200"
@@ -317,8 +316,10 @@
         android:id="@+id/bc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="@+id/ivBackgroundLogin"
         app:layout_constraintTop_toTopOf="@+id/ivBackgroundLogin"
         app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />

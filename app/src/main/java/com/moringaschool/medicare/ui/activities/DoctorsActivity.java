@@ -62,6 +62,14 @@ public class DoctorsActivity extends AppCompatActivity implements RecyclerViewIn
                         Intent intent = new Intent(DoctorsActivity.this, MedicineActivity.class);
                         startActivity(intent);
                         break;
+                    case R.id.menuNotifications:
+                        Intent intents = new Intent(DoctorsActivity.this, BookingsActivity.class);
+                        startActivity(intents);
+                        break;
+                    case R.id.menuHome:
+                        Intent intens = new Intent(DoctorsActivity.this, DoctorsActivity.class);
+                        startActivity(intens);
+                        break;
                 }
                 return true;
             }
@@ -80,7 +88,7 @@ public class DoctorsActivity extends AppCompatActivity implements RecyclerViewIn
             @Override
             public void onFailure(Call<List<Doctor>> call, Throwable t) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Something went wrong. Please check your Internet connection and try again later"+t.getMessage(),
+                        "Something went wrong. Please check your Internet connection and try again later",
                         Toast.LENGTH_LONG);
                 toast.show();
             }

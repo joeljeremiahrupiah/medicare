@@ -44,7 +44,7 @@
         android:layout_marginStart="20dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
+        app:layout_constraintStart_toEndOf="@+id/drAp"
         app:layout_constraintTop_toBottomOf="@+id/exp"
         app:srcCompat="@drawable/ic_rate" />
 
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/medics" />
 
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/imgProfile"
+        android:id="@+id/drAp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
@@ -83,7 +83,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
+        app:layout_constraintStart_toEndOf="@+id/drAp"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
@@ -96,7 +96,7 @@
         android:textColor="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
+        app:layout_constraintStart_toEndOf="@+id/drAp"
         app:layout_constraintTop_toBottomOf="@+id/dr" />
 
     <ImageView
@@ -134,7 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/drAp" />
 
     <TextView
         android:id="@+id/abt"
@@ -244,7 +244,7 @@
         android:textColor="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
+        app:layout_constraintStart_toEndOf="@+id/drAp"
         app:layout_constraintTop_toBottomOf="@+id/hosp" />
 
     <TextView
@@ -255,7 +255,7 @@
         android:layout_marginTop="5dp"
         android:text="St. John Hopkins"
         android:textColor="@android:color/darker_gray"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
+        app:layout_constraintStart_toEndOf="@+id/drAp"
         app:layout_constraintTop_toBottomOf="@+id/prc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

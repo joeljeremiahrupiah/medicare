@@ -70,9 +70,6 @@ public class LoginActivity extends AppCompatActivity {
                 // fetch user details from firebase to verify user authenticity
                 loginEmailPasswordUser(UserEmail.getText().toString().trim(),
                         UserPassword.getText().toString().trim());
-                Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_SHORT).show();
-                Intent intend = new Intent(LoginActivity.this, DoctorsActivity.class);
-                startActivity(intend);
             }
         });
 
@@ -104,7 +101,9 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             assert user != null;
                             String currentUserId = user.getUid();
-
+                            Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_SHORT).show();
+                            Intent intend = new Intent(LoginActivity.this, DoctorsActivity.class);
+                            startActivity(intend);
                             collectionReference.whereEqualTo("userId", currentUserId)
                                     .addSnapshotListener(new EventListener<QuerySnapshot>() {
                                         @Override
@@ -118,10 +117,6 @@ public class LoginActivity extends AppCompatActivity {
                                                     UserApi userApi = UserApi.getInstance();
                                                     userApi.setUserFirstName(snapshot.getString("userFirstName"));
                                                     userApi.setUserId(snapshot.getString("userId"));
-
-//                                                    // Go to Main activity
-//                                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                                                    Log.i(TAG, "Navigating to Main Activity ...");
                                                 }
                                             }
                                         }

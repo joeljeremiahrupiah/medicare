@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.moringaschool.medicare.R;
 import com.moringaschool.medicare.models.Doctor;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +32,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
     TextView drExp;
     @BindView(R.id.appointment)
     Button appoint;
-    @BindView(R.id.imgProfile)
+    @BindView(R.id.drAp)
     ImageView drProf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +47,12 @@ public class DoctorDetailActivity extends AppCompatActivity {
         drAbout.setText(doctor.getAbout());
         drExp.setText(String.format("%s years", doctor.getExperience().toString()));
         drHosp.setText(doctor.getHospital());
-//        drProf.setImageResource(doctor.getImage());
+        Picasso.get().load(doctor.getImage()).into(drProf);
         appoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(DoctorDetailActivity.this,AppointmentActivity.class );
+                in.putExtra("data",doctor);
                 startActivity(in);
             }
         });

@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,17 +69,6 @@ public class SignupActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        // Check for current user before allocating new resources
-        authStateListener = firebaseAuth -> {
-            currentUser = firebaseAuth.getCurrentUser();
-
-            if (currentUser != null) {
-                // user is already logged in
-            } else {
-                // no user yet ....
-            }
-        };
-
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,9 +82,10 @@ public class SignupActivity extends AppCompatActivity {
                     String userFirstName = firstName.getText().toString().trim();
                     String userLastName = lastName.getText().toString().trim();
                     String userPassword = password.getText().toString().trim();
-
                     createUserEmailAccount(userEmail, userPassword, userFirstName, userLastName);
-                    Toast.makeText(SignupActivity.this, "Signup successful!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, "Account Created Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intentss = new Intent(SignupActivity.this, LoginActivity.class);
+                    startActivity(intentss);
                 } else {
                     Toast.makeText(SignupActivity.this,"Empty Fields Not Allowed",Toast.LENGTH_LONG)
                             .show();
@@ -126,11 +117,11 @@ public class SignupActivity extends AppCompatActivity {
 
     // firebase method for account creation
     private void createUserEmailAccount(String userEmail, String userPassword, String userFirstName, String userLastName) {
-        // Validates if the function arguents are available
+        // Validates if the function arguments are available
         if (!TextUtils.isEmpty(userEmail) && !TextUtils.isEmpty(userPassword)
                 && !TextUtils.isEmpty(userFirstName) && !TextUtils.isEmpty(userLastName)) {
 
-            progressBar.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
 
             firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                     .addOnCompleteListener(task -> {
@@ -178,21 +169,13 @@ public class SignupActivity extends AppCompatActivity {
 
                                     });
                         } else {
-                            // something went wrong
+                            Toast.makeText(this, "Failed to create account. Please Check Your Internet Connection and Try Again!", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnFailureListener(e -> {
-
+                        Toast.makeText(this, "Failed to create account. Please Check Your Internet Connection and Try Again!", Toast.LENGTH_SHORT).show();
                     });
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        currentUser = firebaseAuth.getCurrentUser();
-        firebaseAuth.addAuthStateListener(authStateListener);
     }
 
 }

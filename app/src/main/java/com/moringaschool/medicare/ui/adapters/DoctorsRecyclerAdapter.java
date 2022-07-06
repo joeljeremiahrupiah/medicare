@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.moringaschool.medicare.R;
 import com.moringaschool.medicare.models.Doctor;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,11 +40,7 @@ public class DoctorsRecyclerAdapter extends RecyclerView.Adapter<DoctorsRecycler
         holder.doctorName.setText("Dr."+ " "+ doctorsList.get(position).getFirstName()+ " "+ doctorsList.get(position).getLastName());
         holder.practice.setText(doctorsList.get(position).getSpecialization());
         holder.rating.setText(doctorsList.get(position).getRating().toString());
-        Glide.with(context)
-                .load(doctorsList.get(position).getImage())
-                .into(holder.profile);
-//        holder.hours.setText(doctorsList.get(position).getHours());
-
+        Picasso.get().load(doctorsList.get(position).getImage()).into(holder.profile);
     }
 
     @Override
