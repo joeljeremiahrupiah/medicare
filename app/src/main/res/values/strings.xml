@@ -24,4 +24,6 @@
     <string name="eye_specialist">Eye Specialist</string>
     <string name="cardiac_surgeons">Cardiac Surgeons</string>
     <string name="top_doctors">Top Doctors</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

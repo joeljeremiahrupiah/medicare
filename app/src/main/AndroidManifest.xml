@@ -17,6 +17,15 @@
         android:theme="@style/Theme.MediCare"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.Splash3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.Splash2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.BookingsActivity"
             android:exported="false" />
         <activity
