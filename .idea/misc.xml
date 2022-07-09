@@ -12,13 +12,14 @@
         <entry key="app/src/main/res/drawable/ic_twotone_account_circle_30.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_twotone_email_24.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_twotone_password_24.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/image_rounded.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_appointment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_bookings.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_doctor_detail.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_doctors.xml" value="0.16111111111111112" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.13796296296296295" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash2.xml" value="0.25" />

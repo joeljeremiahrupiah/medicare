@@ -17,10 +17,6 @@
     <item android:title="Profile">
         <menu>
             <item
-                android:id="@+id/menuAppointment"
-                android:icon="@drawable/ic_login"
-                android:title="Login" />
-            <item
                 android:id="@+id/menuProfile"
                 android:icon="@drawable/ic_person"
                 android:title="Profile" />

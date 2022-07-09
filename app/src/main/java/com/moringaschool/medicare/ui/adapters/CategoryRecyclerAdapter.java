@@ -5,19 +5,22 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.medicare.R;
+import com.moringaschool.medicare.models.Category;
 
 import java.util.ArrayList;
 
 public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecyclerAdapter.MyHolder> {
     Context context;
-    ArrayList<String> list;
+    ArrayList<Category> list;
 
-    public CategoryRecyclerAdapter(Context context, ArrayList<String> list) {
+    public CategoryRecyclerAdapter(Context context, ArrayList<Category> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,7 +34,8 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-
+        holder.iv.setImageResource(list.get(position).getImage_drawable());
+        holder.time.setText(list.get(position).getName());
     }
 
     @Override
@@ -40,9 +44,13 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
     }
 
     public class MyHolder extends RecyclerView.ViewHolder{
+        TextView time;
+        ImageView iv;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
+            time = (TextView) itemView.findViewById(R.id.tv);
+            iv = (ImageView) itemView.findViewById(R.id.iv);
         }
     }
 }

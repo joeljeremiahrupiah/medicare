@@ -73,28 +73,15 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView29"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/skp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="64dp"
-        android:fontFamily="@font/lato"
-        android:text="Skip"
-        android:textColor="@color/teal_200"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/imageView32"
         android:layout_width="118dp"
         android:layout_height="81dp"
-        android:layout_marginStart="76dp"
-        app:layout_constraintBottom_toBottomOf="@+id/skp"
-        app:layout_constraintStart_toEndOf="@+id/skp"
-        app:layout_constraintTop_toTopOf="@+id/skp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/dots" />
 
     <Button
@@ -106,10 +93,10 @@
         android:textColor="@color/white"
         android:textSize="12sp"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/skp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView29"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.419" />
 </androidx.constraintlayout.widget.ConstraintLayout>
