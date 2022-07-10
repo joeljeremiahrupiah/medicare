@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.moringaschool.medicare.R;
 import com.moringaschool.medicare.models.Category;
@@ -16,7 +20,8 @@ public class MedicineActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Category> catList;
     private CategoryRecyclerAdapter adapter;
-
+    TextView shop;
+    Button order;
     private int[] myImageList = new int[]{R.drawable.consult, R.drawable.medicine,R.drawable.tst, R.drawable.ref,R.drawable.hh};
     private String[] myImageNameList = new String[]{"Consultation","Medicines" ,"Lab Tests","Refill","Other"};
 
@@ -30,6 +35,15 @@ public class MedicineActivity extends AppCompatActivity {
         adapter = new CategoryRecyclerAdapter(this, catList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        shop = findViewById(R.id.shp);
+        order = findViewById(R.id.ordButton);
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intens = new Intent(MedicineActivity.this, DrugsActivity.class);
+                startActivity(intens);
+            }
+        });
     }
 
     private ArrayList<Category> setCategory() {
