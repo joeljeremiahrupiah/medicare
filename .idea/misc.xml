@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/custom_dialog_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_right_alt_30.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_fav.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1235" />
@@ -16,6 +17,7 @@
         <entry key="app/src/main/res/drawable/image_rounded.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_appointment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_bookings.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_checkout.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_doctor_detail.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_doctors.xml" value="0.16111111111111112" />
         <entry key="app/src/main/res/layout/activity_drugs.xml" value="0.25" />
@@ -28,6 +30,8 @@
         <entry key="app/src/main/res/layout/activity_splash3.xml" value="0.190625" />
         <entry key="app/src/main/res/layout/booked_item.xml" value="0.18" />
         <entry key="app/src/main/res/layout/category_item.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/custom_address_dialog.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.33" />
         <entry key="app/src/main/res/layout/doctor_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/drug_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_consultation.xml" value="0.18" />

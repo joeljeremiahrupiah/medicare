@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.moringaschool.medicare.R;
@@ -31,6 +33,7 @@ public class DrugsActivity extends AppCompatActivity {
     @BindView(R.id.drugTxt)
     EditText drugTxt;
     List<FormAndDosage> form;
+    @BindView(R.id.cart) ImageView cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +68,13 @@ public class DrugsActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<DrugList> call, Throwable t) {
                 Toast.makeText(getBaseContext(), "Check your internet connection", Toast.LENGTH_SHORT).show();
+            }
+        });
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ints = new Intent(DrugsActivity.this, CheckoutActivity.class);
+                startActivity(ints);
             }
         });
 
