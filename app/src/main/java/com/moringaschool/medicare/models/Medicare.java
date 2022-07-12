@@ -3,7 +3,9 @@ package com.moringaschool.medicare.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Medicare {
+import java.io.Serializable;
+
+public class Medicare  implements Serializable {
     @SerializedName("showMedicare")
     @Expose
     private Boolean showMedicare;

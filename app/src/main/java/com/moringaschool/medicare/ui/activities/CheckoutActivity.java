@@ -5,16 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.moringaschool.medicare.R;
 import com.moringaschool.medicare.ui.fragments.AddressDialog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CheckoutActivity extends AppCompatActivity implements AddressDialog.AddressDialogListener {
     private Button checkout;
@@ -24,6 +30,7 @@ public class CheckoutActivity extends AppCompatActivity implements AddressDialog
     CardView paypal;
     CardView mpesa;
     String deliveryAdd;
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +40,16 @@ public class CheckoutActivity extends AppCompatActivity implements AddressDialog
         paypal = findViewById(R.id.paypal);
         mpesa = findViewById(R.id.mpesa);
         card = findViewById(R.id.credit);
+
+        Intent intent = getIntent();
+        ArrayList<String> fd = (ArrayList<String>) intent.getSerializableExtra("details");
+        Log.e("TAG","Array"+fd);
+        listView= findViewById(R.id.list);
+        List<String> arrayList = new ArrayList<>();
+        arrayList.addAll(fd);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,arrayList);
+        listView.setAdapter(arrayAdapter);
+
 
         cash.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)

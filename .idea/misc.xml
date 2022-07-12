@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/custom_dialog_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/custom_search.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_right_alt_30.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_fav.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1235" />
@@ -20,7 +21,7 @@
         <entry key="app/src/main/res/layout/activity_checkout.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_doctor_detail.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_doctors.xml" value="0.16111111111111112" />
-        <entry key="app/src/main/res/layout/activity_drugs.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_drugs.xml" value="0.40893854748603353" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.13796296296296295" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.22" />

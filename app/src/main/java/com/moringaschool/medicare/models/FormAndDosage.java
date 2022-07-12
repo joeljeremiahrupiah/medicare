@@ -3,7 +3,9 @@ package com.moringaschool.medicare.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class FormAndDosage {
+import java.io.Serializable;
+
+public class FormAndDosage implements Serializable {
     @SerializedName("form")
     @Expose
     private String form;
