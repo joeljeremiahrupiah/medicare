@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moringaschool.medicare.R;
@@ -21,6 +22,7 @@ import com.moringaschool.medicare.ui.fragments.AddressDialog;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CheckoutActivity extends AppCompatActivity implements AddressDialog.AddressDialogListener {
     private Button checkout;
@@ -31,6 +33,8 @@ public class CheckoutActivity extends AppCompatActivity implements AddressDialog
     CardView mpesa;
     String deliveryAdd;
     ListView listView;
+    TextView shippingAmount;
+    TextView total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,11 +107,14 @@ public class CheckoutActivity extends AppCompatActivity implements AddressDialog
             }
         });
 
+        shippingAmount = findViewById(R.id.shippingAmt);
+        total = findViewById(R.id.total);
+
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              dialog.show();
-                Toast.makeText(CheckoutActivity.this, "Delivery Address:"+deliveryAdd, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CheckoutActivity.this, "Delivery Address:"+ " " +deliveryAdd, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -120,5 +127,17 @@ public class CheckoutActivity extends AppCompatActivity implements AddressDialog
     @Override
     public void applyText(String address) {
          deliveryAdd= address;
+         String amount = "Ksh.0.00";
+        if (Objects.equals(address, "Nairobi")){
+            amount= "100";
+        }else if (Objects.equals(address, "Kisumu")){
+            amount = "500";
+        }else if (Objects.equals(deliveryAdd, "Kiambu")){
+            amount = "150";
+        }
+        shippingAmount.setText(amount);
+        int t= Integer.parseInt(shippingAmount.getText().toString());
+        String ant = String.valueOf((t +400));
+        total.setText("Ksh." + ant);
     }
 }
