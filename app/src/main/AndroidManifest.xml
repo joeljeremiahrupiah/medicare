@@ -17,12 +17,21 @@
         android:theme="@style/Theme.MediCare"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.RatingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.CheckoutActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.DrugsActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.activities.Splash3Activity"
             android:exported="false" />
@@ -46,8 +55,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.activities.DoctorsActivity"
-            android:windowSoftInputMode="adjustPan"
-        android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.activities.SignupActivity"
             android:exported="false" />

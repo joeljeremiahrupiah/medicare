@@ -68,6 +68,7 @@ dependencies {
     implementation "com.google.guava:guava:31.1-android"
     //daimaija animation
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
+    implementation "com.airbnb.android:lottie:3.4.0"
     //Rounded Image
     implementation 'com.makeramen:roundedimageview:2.3.0'
     //Navigation Component

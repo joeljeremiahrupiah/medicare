@@ -70,6 +70,18 @@ public class DoctorsActivity extends AppCompatActivity implements RecyclerViewIn
                         Intent intens = new Intent(DoctorsActivity.this, DoctorsActivity.class);
                         startActivity(intens);
                         break;
+                    case R.id.menuProfile:
+                        Intent inte = new Intent(DoctorsActivity.this, ProfileActivity.class);
+                        startActivity(inte);
+                        break;
+                    case R.id.menuFAQ:
+                        Intent intenn = new Intent(DoctorsActivity.this, FAQActivity.class);
+                        startActivity(intenn);
+                        break;
+                    case R.id.menuRate:
+                        Intent intennd = new Intent(DoctorsActivity.this, RatingActivity.class);
+                        startActivity(intennd);
+                        break;
                 }
                 return true;
             }
