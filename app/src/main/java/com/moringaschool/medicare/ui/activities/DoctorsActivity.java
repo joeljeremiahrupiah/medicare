@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.medicare.R;
 import com.moringaschool.medicare.models.Doctor;
 import com.moringaschool.medicare.network.clients.DoctorClient;
@@ -52,7 +53,6 @@ public class DoctorsActivity extends AppCompatActivity implements RecyclerViewIn
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
-
         NavigationView navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -81,6 +81,11 @@ public class DoctorsActivity extends AppCompatActivity implements RecyclerViewIn
                     case R.id.menuRate:
                         Intent intennd = new Intent(DoctorsActivity.this, RatingActivity.class);
                         startActivity(intennd);
+                        break;
+                    case R.id.menuLogout:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(DoctorsActivity.this,LoginActivity.class));
+                        Toast.makeText(DoctorsActivity.this, "Logout successfully", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

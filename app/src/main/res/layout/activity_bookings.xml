@@ -136,4 +136,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
+    <TextView
+        android:id="@+id/bcg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/gbck"
+        app:layout_constraintStart_toEndOf="@+id/gbck"
+        app:layout_constraintTop_toTopOf="@+id/gbck" />
+
+    <TextView
+        android:id="@+id/hm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lato"
+        android:text="Home"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/bcg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/gbck"
+        app:layout_constraintTop_toBottomOf="@+id/bcg" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

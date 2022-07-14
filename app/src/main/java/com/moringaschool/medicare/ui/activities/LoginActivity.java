@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,15 +31,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.moringaschool.medicare.MainActivity;
 import com.moringaschool.medicare.R;
 
+import java.util.Objects;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import util.UserApi;
 
 public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.etSigninEmail)
-    EditText UserEmail;
+    EditText loginEmail;
     @BindView(R.id.etLoginPassword)
-    EditText UserPassword;
+    EditText loginPassword;
     @BindView(R.id.btnLogin)
     Button login;
     @BindView(R.id.btnSignupNow)
@@ -46,14 +49,8 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.btnForgotPassword)
     Button forgotPassword;
 
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener authStateListener;
-    private FirebaseUser currentuser;
-
+    private FirebaseAuth mAuth;
     // Firebase Connection
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-    private CollectionReference collectionReference = db.collection("Users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +59,13 @@ public class LoginActivity extends AppCompatActivity {
         // bind current view
         ButterKnife.bind(this);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // fetch user details from firebase to verify user authenticity
-                loginEmailPasswordUser(UserEmail.getText().toString().trim(),
-                        UserPassword.getText().toString().trim());
+                userLogin();
             }
         });
 
@@ -90,49 +86,43 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    private void userLogin() {
+        String usrEmail = Objects.requireNonNull(loginEmail.getText()).toString().trim();
+        String usrPassword= Objects.requireNonNull(loginPassword.getText()).toString().trim();
 
-    private void loginEmailPasswordUser(String userEmail, String userPassword) {
-        if (!TextUtils.isEmpty(userEmail)
-                && !TextUtils.isEmpty(userPassword)) {
-            firebaseAuth.signInWithEmailAndPassword(userEmail, userPassword)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            assert user != null;
-                            String currentUserId = user.getUid();
-                            Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_SHORT).show();
-                            Intent intend = new Intent(LoginActivity.this, DoctorsActivity.class);
-                            startActivity(intend);
-                            collectionReference.whereEqualTo("userId", currentUserId)
-                                    .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                                        @Override
-                                        public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-
-                                            if (e != null) {
-                                            }
-                                            assert queryDocumentSnapshots != null;
-                                            if (!queryDocumentSnapshots.isEmpty()) {
-                                                for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots) {
-                                                    UserApi userApi = UserApi.getInstance();
-                                                    userApi.setUserFirstName(snapshot.getString("userFirstName"));
-                                                    userApi.setUserId(snapshot.getString("userId"));
-                                                }
-                                            }
-                                        }
-                                    });
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-
-                        }
-                    });
-        } else {
-            Toast.makeText(LoginActivity.this, "Email and Password required",
-                            Toast.LENGTH_LONG)
-                    .show();
+        if (usrPassword.isEmpty()){
+            loginPassword.setError("Password is required");
+            loginPassword.requestFocus();
+            return;
         }
+        if (usrEmail.isEmpty()){
+            loginEmail.setError("Email is required");
+            loginEmail.requestFocus();
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(usrEmail).matches()){
+            loginEmail.setError("Please provide a valid email");
+            loginEmail.requestFocus();
+            return;
+        }
+        if (usrPassword.length() <6){
+            loginPassword.setError("Min password length should be 6 characters");
+            loginPassword.requestFocus();
+            return;
+        }
+        mAuth.signInWithEmailAndPassword(usrEmail,usrPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Intent intent = new Intent(LoginActivity.this, DoctorsActivity.class);
+                    intent.putExtra("user",usrEmail);
+                    startActivity(intent);
+                    Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
 }

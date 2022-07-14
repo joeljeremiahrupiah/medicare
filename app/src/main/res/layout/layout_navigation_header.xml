@@ -22,7 +22,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/profile"
+            android:src="@drawable/cc2"
             app:riv_oval="true" />
 
         <TextView

@@ -3,9 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/roa"
     android:layout_height="match_parent"
+    android:background="@drawable/cc"
     tools:context=".ui.activities.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/imageView47"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cc2" />
 
     <ImageView
         android:id="@+id/imageView51"
@@ -17,22 +29,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
-<!--    </androidx.cardview.widget.CardView>-->
+    <!--    </androidx.cardview.widget.CardView>-->
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomCard"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="15dp"
-        app:cardElevation="9dp"
+        app:cardElevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574">
+        app:layout_constraintVertical_bias="0.9">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,14 +54,13 @@
                 android:id="@+id/textView34"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="104dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/lato"
                 android:text="Ciara Black"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,11 +68,12 @@
                 android:id="@+id/textView40"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:drawableStart="@drawable/ic_email"
-                android:drawablePadding="10dp"
-                android:text="middlechild@gmail.com"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/lato"
+                android:text="ciarablack@gmail.com"
                 android:textColor="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.072"
@@ -69,14 +81,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
             <TextView
-                android:id="@+id/textView42"
+                android:id="@+id/bithday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
                 android:drawableStart="@drawable/ic_baseline_cake_24"
                 android:drawablePadding="10dp"
-                android:text="July 7,1997"
+                android:fontFamily="@font/lato"
+                android:text="Month/day/Year"
                 android:textColor="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.051"
@@ -84,24 +97,27 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
             <TextView
-                android:id="@+id/textView43"
+                android:id="@+id/gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
                 android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="10dp"
-                android:text="Female"
+                android:fontFamily="@font/lato"
+                android:text="Female/Male"
                 android:textColor="#A9A9A9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.051"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView42" />
+                app:layout_constraintTop_toBottomOf="@+id/bithday" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/edit"
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/teal_700"
                 android:text="Edit profile"
                 android:textColor="@color/white"
@@ -109,7 +125,143 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView43" />
+                app:layout_constraintTop_toBottomOf="@+id/weight"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:drawableStart="@drawable/ic_baseline_height_24"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/lato"
+                android:text="Height(m)"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:drawableStart="@drawable/ic_baseline_monitor_weight_24"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/lato"
+                android:text="Weight(kg)"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.046"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/height" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/edtCard"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#009688"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.94">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp">
+
+                    <EditText
+                        android:id="@+id/edtBday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center"
+                        android:hint="Birthday"
+                        android:inputType="textPersonName"
+                        android:textColorHint="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ems="10"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center"
+                        android:hint="gender"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtBday" />
+
+                    <EditText
+                        android:id="@+id/edHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center"
+                        android:hint="Height"
+                        android:inputType="number"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edGender" />
+
+                    <EditText
+                        android:id="@+id/edWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:ems="10"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center"
+                        android:hint="weight"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edHeight" />
+
+                    <Button
+                        android:id="@+id/sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:backgroundTint="@color/white"
+                        android:text="Submit"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/edWeight"
+                        app:layout_constraintStart_toStartOf="@+id/edWeight"
+                        app:layout_constraintTop_toBottomOf="@+id/edWeight" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -118,9 +270,10 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:cardBackgroundColor="@color/purple_700"
         app:cardCornerRadius="100dp"
-        app:cardElevation="10dp"
+        app:cardElevation="17dp"
         app:layout_constraintBottom_toTopOf="@id/bottomCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,8 +281,8 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="140dp"
             android:background="@drawable/profile"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"

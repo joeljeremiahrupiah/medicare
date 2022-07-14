@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +28,9 @@ public class BookingsActivity extends AppCompatActivity {
     BookingAdapter bookingAdapter;
     ArrayList<Bookings> bookingsList;
     ImageView gbck;
+    TextView bc;
+    TextView home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +57,27 @@ public class BookingsActivity extends AppCompatActivity {
             }
         });
         gbck= findViewById(R.id.gbck);
-        gbck.setOnClickListener(new View.OnClickListener() {
+        bc= findViewById(R.id.bcg);
+        home= findViewById(R.id.hm);
+        bc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intnds = new Intent(BookingsActivity.this,AppointmentActivity.class);
                 startActivity(intnds);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intinds = new Intent(BookingsActivity.this,DoctorsActivity.class);
+                startActivity(intinds);
+            }
+        });
+        gbck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bc.setVisibility(View.VISIBLE);
+                home.setVisibility(View.VISIBLE);
             }
         });
 
