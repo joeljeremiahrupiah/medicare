@@ -1,6 +1,6 @@
 # Medicare
 
-#### An app that enables connect patients with experienced doctors from recognized hospitals where they can get services or find medicine they want.
+#### A medical app that allows you to book a doctor's appointment and order medicine online.
 #### CONTRIBUTORS
 <ul>
 <li>Wendy Busolo</li> 
