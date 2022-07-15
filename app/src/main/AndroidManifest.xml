@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.moringaschool.medicare">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name="util.UserApi"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,6 +17,53 @@
         android:theme="@style/Theme.MediCare"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.RatingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.CheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.DrugsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activities.Splash3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.Splash2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.BookingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.AppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.DoctorDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.MedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.DoctorsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activities.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -22,6 +72,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

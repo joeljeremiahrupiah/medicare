@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">MediCare</string>
+    <string name="background_image">background image</string>
+    <string name="tvLogin">Login</string>
+    <string name="tvSignup">Signup</string>
+    <string name="etLoginPassword">Password</string>
+    <string name="etLoginEmail">example@email.com</string>
+    <string name="btnSignup_now">SIGNUP NOW</string>
+    <string name="btnForgot_password">Forgot Password ?</string>
+    <string name="btnLogin_now">LOGIN NOW</string>
+    <string name="direction_label">direction label</string>
+    <string name="imagedescription">direction label</string>
+    <string name="SignupEmail">example.email.com</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="password">Password</string>
+    <string name="signup_now">SIGNUP NOW</string>
+    <string name="or">OR</string>
+    <string name="imagedescriptionArrowIcon">arrow icon</string>
+    <string name="imagebutton">imageButton</string>
+    <string name="verified">Verified</string>
+    <string name="john_doe">John Doe</string>
+    <string name="general_physician">General Physician</string>
+    <string name="eye_specialist">Eye Specialist</string>
+    <string name="cardiac_surgeons">Cardiac Surgeons</string>
+    <string name="top_doctors">Top Doctors</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
