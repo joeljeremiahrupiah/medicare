@@ -1,26 +1,6 @@
 # Medicare
 
 #### A medical app that allows you to book a doctor's appointment and order medicine online.
-#### CONTRIBUTORS
-<ul>
-<li>Wendy Busolo</li> 
-<li>Rachel Namiba</li>
-<li>Velma Mukanga</li>
-<li>Brian Juma</li>
-<li>Gilbert Korir</li>
-</ul>
-
-
-## Description
-This we app is developed using Java language, the app functionality is supported with Spark, InteliJ, SQL and heroku. The app allows patients to find doctors for consultation or find a drug they want thus saving them a lot of time.
-
-## Prerequisites
-- Basic Java, Android Studio and Git knowledge, including an installed version of Git.
-- Your application must run on the OpenJDK version 11 onwards.
-
-## Setup & Installation
-* Clone the project into your machine from `https://github.com/NinaWendy/MediCare.git`
-* Run the project in the forked root folder- gradle run.
 
 ## Screen shots
 <img src="https://i.postimg.cc/j5n7xNxV/photo-2022-07-14-22-45-05.jpg" alt="Home" width="300" height="500">&nbsp;&nbsp;<img src="https://i.postimg.cc/Y0cmh90v/photo-2022-07-14-22-45-07.jpg" alt="Home" width="300" height="500"></br>
@@ -38,7 +18,6 @@ This we app is developed using Java language, the app functionality is supported
 ## Technologies used
 * Java- `Backend and frontend.`
 * Gradle- `(For Project building).`
-* Postman `For testing the end points.`
 * Spark- `Backend.`
 * Sql- `For persistence data storage and retrieval`
 * Junit- `Testing`
@@ -104,24 +83,3 @@ dependencies {
 }
 ```
 </details>
-
-## Development
-
-Want to contribute? Great!
-To fix a bug or enhance an existing module, follow these steps:
-
-- Fork the repo
-- Create a new branch (`git checkout -b improve-feature`)
-- Make the appropriate changes in the files
-- Add changes to reflect the changes made
-- Commit your changes (`git commit -am 'Improve feature'`)
-- Push to the branch (`git push origin improve-feature`)
-- Create a Pull Request
-
-## Known Bugs
-
-If you find any other bug, kindly let us know here []()
-
-
-## Support and contact details
-contact   medicare@gmail.com.
